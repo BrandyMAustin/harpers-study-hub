@@ -206,6 +206,30 @@
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes confettiBurst { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); } 100% { transform: scale(1); opacity: 1; } }
   .confetti-burst { animation: confettiBurst 0.4s ease; }
+    .grade-panel { background: var(--card); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; box-shadow: var(--shadow); }
+    .grade-header { display: flex; align-items: center; gap: 20px; margin-bottom: 16px; flex-wrap: wrap; }
+    .grade-circle { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; color: white; flex-shrink: 0; }
+    .grade-a { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    .grade-b { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+    .grade-c { background: linear-gradient(135deg, #f97316, #ea580c); }
+    .grade-d { background: linear-gradient(135deg, #ef4444, #dc2626); }
+    .grade-f { background: linear-gradient(135deg, #991b1b, #7f1d1d); }
+    .grade-unknown { background: linear-gradient(135deg, #9ca3af, #6b7280); font-size: 16px; }
+    .grade-info h3 { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .grade-info .grade-label { font-size: 14px; color: var(--text-light); }
+    .grade-info .grade-trend { font-size: 13px; margin-top: 6px; padding: 4px 10px; border-radius: 8px; display: inline-block; }
+    .trend-up { background: #dcfce7; color: #16a34a; }
+    .trend-down { background: #fee2e2; color: #dc2626; }
+    .trend-stable { background: #dbeafe; color: #2563eb; }
+    .improvement-plan { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; margin-top: 16px; }
+    .improvement-plan.critical { background: linear-gradient(135deg, #fee2e2, #fecaca); border-color: #ef4444; }
+    .improvement-plan h4 { font-weight: 800; margin-bottom: 12px; font-size: 16px; }
+    .improvement-plan .action-item { padding: 10px 14px; background: rgba(255,255,255,0.7); border-radius: 8px; margin-bottom: 8px; font-size: 14px; line-height: 1.6; }
+    .improvement-plan .action-item:last-child { margin-bottom: 0; }
+    .priority { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-right: 6px; }
+    .priority-urgent { background: #fee2e2; color: #dc2626; }
+    .priority-important { background: #fef3c7; color: #d97706; }
+    .priority-tip { background: #dbeafe; color: #2563eb; }
 </style>
 </head>
 <body>
@@ -395,7 +419,66 @@ const assignments = [
       { id:62, title:'Unit 9 Test Review (MISSING)', classId:'algebra', due:'2026-03-03', time:'All Day', done:false }
 ];
 
-const quotes = [
+const gradeData = {
+      algebra: {
+        grade: 62, letter: 'D',
+        trend: 'PR5: 63 → PR6: 67 → T3: 62',
+        trendDir: 'down',
+        summary: '⚠️ Algebra needs urgent attention. Two missing assignments and low test scores are the main issues.',
+        actions: [
+          { priority: 'urgent', text: 'Turn in Unit 9 Test Review (currently 0/100) — even partial credit helps!' },
+          { priority: 'urgent', text: 'Complete Unit 9 Quiz Rev COMP (currently 0/100) — two zeros are pulling the average way down.' },
+          { priority: 'important', text: 'Unit 9 Test was 44/100 and Quiz was 53/100 — ask Mr. Robbins about test corrections or retakes.' },
+          { priority: 'important', text: 'Focus on graphing quadratics: vertex form y = a(x-h)²+k, finding the vertex, and plotting points.' },
+          { priority: 'tip', text: 'If you score 80 on both missing assignments, your T3 could jump to ~75. Those zeros matter A LOT!' }
+        ]
+      },
+      language: {
+        grade: null, letter: null,
+        trend: 'PR5: 83 → PR6: 79',
+        trendDir: 'down',
+        summary: 'One missing assignment is hurting this grade. Turning it in could make a big difference.',
+        actions: [
+          { priority: 'urgent', text: 'Turn in DJ- Act 1 (missing since 02/27, currently 0/100) — this zero is dragging the average down.' },
+          { priority: 'important', text: 'Grades slipped from 83 to 79 last period — stay on top of daily assignments and reading.' },
+          { priority: 'tip', text: 'Talk to Ms. Clayton about the DJ-Act 1 makeup. Even late credit beats a zero!' }
+        ]
+      },
+      art: {
+        grade: null, letter: null,
+        trend: 'PR5: 100 → PR6: 100',
+        trendDir: 'stable',
+        summary: 'All Art grades are 100 except one missing project. Easy fix!',
+        actions: [
+          { priority: 'urgent', text: 'Turn in Clay Crest Design (missing since 02/25) — every other Art grade is 100, so this one zero is the ONLY thing hurting you.' },
+          { priority: 'tip', text: 'Talk to Ms. Peterson about completing the Clay Crest Design. One assignment = perfect grade!' }
+        ]
+      },
+      history: {
+        grade: null, letter: null,
+        trend: 'PR5: 95 → PR6: 84',
+        trendDir: 'down',
+        summary: 'No missing work, but the grade dipped from last period. Keep up with study guides.',
+        actions: [
+          { priority: 'important', text: 'Grade dropped from 95 to 84 — make sure all study guides and reading checks are fully complete.' },
+          { priority: 'important', text: 'Unit 13 Test is coming up — start reviewing now and use the 6 C\'s method for primary sources!' },
+          { priority: 'tip', text: 'Your strength is primary source analysis. Practice with real examples to prep for the test.' }
+        ]
+      },
+      science: {
+        grade: null, letter: null,
+        trend: 'PR5: 84 → PR6: 85',
+        trendDir: 'up',
+        summary: 'Grades are steadily improving! Keep up the momentum heading into the next test.',
+        actions: [
+          { priority: 'important', text: 'Chemistry Test 2 is coming up — review balancing equations, reaction types, and the periodic table.' },
+          { priority: 'tip', text: 'Your grades have improved every period (76 → 80 → 84 → 85). Awesome trend — keep it going!' },
+          { priority: 'tip', text: 'Draw reactions with colored pencils — color-code each element to track where atoms go.' }
+        ]
+      }
+    };
+
+    const quotes = [
   "You don't have to be perfect — you just have to keep going! 💪",
   "Your brain works differently, and that's your superpower! ✨",
   "Small steps every day add up to big results! 🌟",
@@ -459,7 +542,47 @@ function showView(view, classId) {
   }
 }
 
-function renderDashboard() {
+function renderGradePanel(classId) {
+      const gd = gradeData[classId];
+      if (!gd) return '';
+      const grade = gd.grade;
+      const letter = gd.letter;
+      let gradeClass = 'grade-unknown';
+      let gradeDisplay = '?';
+      let gradeLabel = 'Check Skyward for current grade';
+      if (grade !== null) {
+        gradeDisplay = grade;
+        if (grade >= 90) gradeClass = 'grade-a';
+        else if (grade >= 80) gradeClass = 'grade-b';
+        else if (grade >= 70) gradeClass = 'grade-c';
+        else if (grade >= 60) gradeClass = 'grade-d';
+        else gradeClass = 'grade-f';
+        gradeLabel = 'Current T3 Grade' + (letter ? ' (' + letter + ')' : '');
+      }
+      const trendClass = gd.trendDir === 'up' ? 'trend-up' : gd.trendDir === 'down' ? 'trend-down' : 'trend-stable';
+      const trendIcon = gd.trendDir === 'up' ? '📈' : gd.trendDir === 'down' ? '📉' : '➡️';
+      let actionsHTML = '';
+      gd.actions.forEach(function(a) {
+        actionsHTML += '<div class="action-item"><span class="priority priority-' + a.priority + '">' + a.priority + '</span> ' + a.text + '</div>';
+      });
+      const isCritical = grade !== null && grade < 70;
+      return '<div class="grade-panel">' +
+        '<div class="grade-header">' +
+          '<div class="grade-circle ' + gradeClass + '">' + gradeDisplay + '</div>' +
+          '<div class="grade-info">' +
+            '<h3>' + gradeLabel + '</h3>' +
+            '<div class="grade-trend ' + trendClass + '">' + trendIcon + ' ' + gd.trend + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p style="color:var(--text-light);font-size:14px;margin-bottom:12px;">' + gd.summary + '</p>' +
+        '<div class="improvement-plan' + (isCritical ? ' critical' : '') + '">' +
+          '<h4>' + (isCritical ? '🚨 Action Plan to Raise This Grade' : '📋 Action Plan') + '</h4>' +
+          actionsHTML +
+        '</div>' +
+      '</div>';
+    }
+
+    function renderDashboard() {
   const hour = new Date().getHours();
   let greet = hour < 12 ? 'Good Morning' : hour < 17 ? 'Good Afternoon' : 'Good Evening';
   document.getElementById('greeting').textContent = greet + ', Harper! 👋';
@@ -502,7 +625,7 @@ function renderClassDetail(classId) {
   let helpHTML = '';
   if (cls.help) { cls.help.forEach(h => { helpHTML += '<div class="help-card"><h4>' + h.title + '</h4>' + h.content + '</div>'; }); }
   const savedNotes = notes[classId] || '';
-  container.innerHTML = '<div class="detail-header"><span class="icon">' + cls.icon + '</span><div><h2 style="color:' + cls.color + '">' + cls.name + '</h2><span class="topic-badge">' + cls.topic + '</span></div></div><a href="' + cls.url + '" target="_blank" class="canvas-link" style="background:' + cls.gradient + '">🔗 Open in Canvas</a><div class="section-panel"><h3>📋 Assignments</h3><ul class="assignment-list">' + (assignHTML || '<li style="color:var(--text-light); padding:12px;">No assignments right now!</li>') + '</ul></div><div class="section-panel"><h3>💡 Help & Study Tips</h3>' + helpHTML + '</div><div class="section-panel"><h3>📝 My Notes & Ideas</h3><p style="color:var(--text-light); font-size:14px; margin-bottom:12px;">Jot down formulas, teacher tips, questions — anything you want to remember!</p><textarea class="notes-area" id="notes-' + classId + '" placeholder="Type your notes here..." oninput="saveNotes(\'' + classId + '\')">' + savedNotes + '</textarea><div class="save-indicator" id="save-indicator-' + classId + '">✓ Saved!</div></div>';
+  container.innerHTML = '<div class="detail-header"><span class="icon">' + cls.icon + '</span><div><h2 style="color:' + cls.color + '">' + cls.name + '</h2><span class="topic-badge">' + cls.topic + '</span></div></div><a href="' + cls.url + '" target="_blank" class="canvas-link" style="background:' + cls.gradient + '">🔗 Open in Canvas</a>' + renderGradePanel(cls.id) + '<div class="section-panel"><h3>📋 Assignments</h3><ul class="assignment-list">' + (assignHTML || '<li style="color:var(--text-light); padding:12px;">No assignments right now!</li>') + '</ul></div><div class="section-panel"><h3>💡 Help & Study Tips</h3>' + helpHTML + '</div><div class="section-panel"><h3>📝 My Notes & Ideas</h3><p style="color:var(--text-light); font-size:14px; margin-bottom:12px;">Jot down formulas, teacher tips, questions — anything you want to remember!</p><textarea class="notes-area" id="notes-' + classId + '" placeholder="Type your notes here..." oninput="saveNotes(\'' + classId + '\')">' + savedNotes + '</textarea><div class="save-indicator" id="save-indicator-' + classId + '">✓ Saved!</div></div>';
 }
 
 function toggleAssignment(id, classId) {
