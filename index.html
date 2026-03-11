@@ -314,7 +314,7 @@ const classes = [
       { title:'Quick Memory Trick', content:'<p>Think of the 6 C\'s as a detective checklist 🔎 — you\'re investigating a mystery from the past! Who wrote it, why, and what can it tell us?</p>' }
     ]
   },
-  { id:'language', name:'Language Arts', icon:'📖', color:'#db2777', gradient:'linear-gradient(135deg,#ec4899,#f9a8d4)', cardClass:'card-language', url:'https://southlakecarroll.instructure.com/courses', topic:'Guided Reading & Literature',
+  { id:'language', name:'Language Arts', icon:'📖', color:'#db2777',gradient:'linear-gradient(135deg,#ec4899,#f9a8d4)', cardClass:'card-language', url:'https://southlakecarroll.instructure.com/courses', topic:'Guided Reading & Literature',
     help: [
       { title:'Active Reading Strategies', content:'<ol><li><strong>Preview:</strong> Skim headings, bold words, and images first</li><li><strong>Question:</strong> Turn headings into questions</li><li><strong>Read:</strong> Look for answers to your questions</li><li><strong>Summarize:</strong> After each section, say the main idea in your own words</li><li><strong>Review:</strong> Look back at your notes</li></ol>' },
       { title:'Literary Analysis Terms', content:'<p><strong>Theme:</strong> The big life lesson or message</p><p><strong>Tone:</strong> The author\'s attitude (serious, playful, sarcastic)</p><p><strong>Symbolism:</strong> When something represents something bigger</p><p><strong>Foreshadowing:</strong> Hints about what\'s coming</p><p><strong>Irony:</strong> When the opposite of what you expect happens</p>' },
@@ -388,7 +388,11 @@ const assignments = [
   { id:55, title:'Quiz', classId:'algebra', due:'2026-04-20', time:'All Day', done:false },
   { id:56, title:'3D Art - Final Project Work Day', classId:'art', due:'2026-04-26', time:'All Day', done:false },
   { id:57, title:'Unit 12 Test Part One', classId:'algebra', due:'2026-05-11', time:'All Day', done:false },
-  { id:58, title:'Unit 12 Test Part Two', classId:'algebra', due:'2026-05-12', time:'All Day', done:false }
+  { id:58, title:'Unit 12 Test Part Two', classId:'algebra', due:'2026-05-12', time:'All Day', done:false },
+      { id:59, title:'Unit 9 Quiz Rev COMP (MISSING)', classId:'algebra', due:'2026-02-18', time:'All Day', done:false },
+      { id:60, title:'Clay Crest Design (MISSING)', classId:'art', due:'2026-02-25', time:'All Day', done:false },
+      { id:61, title:'DJ- Act 1 (MISSING)', classId:'language', due:'2026-02-27', time:'All Day', done:false },
+      { id:62, title:'Unit 9 Test Review (MISSING)', classId:'algebra', due:'2026-03-03', time:'All Day', done:false }
 ];
 
 const quotes = [
@@ -605,7 +609,7 @@ function updateTimerDisplay() {
 }
 
 function getUrgency(dateStr) {
-  const today = new Date('2026-03-06');
+  const today = new Date();
   const due = new Date(dateStr);
   const diff = (due - today) / (1000 * 60 * 60 * 24);
   if (diff <= 0) return 'today';
