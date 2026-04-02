@@ -317,12 +317,42 @@
 </div>
 <script>
 const classes = [
-      { id:'algebra', name:'Advanced Algebra 1', topic:'Quadratics - Completing the Square & Applications' },
-      { id:'science', name:'Advanced Science', topic:'Physics - Force & Motion' },
-      { id:'history', name:'US History', topic:'Civil War & Reconstruction' },
-      { id:'language', name:'Language Arts', topic:'FFA Reading & Literature Analysis' },
-      { id:'art', name:'3D Art', topic:'3D Art Projects' }
-    ];
+  { id:'algebra', name:'Advanced Algebra 1', icon:'📐', color:'#7c3aed', gradient:'linear-gradient(135deg,#7c3aed,#a78bfa)', cardClass:'card-algebra', url:'https://southlakecarroll.instructure.com/courses/49770', topic:'Quadratics - Completing the Square & Applications',
+    help: [
+      { title:'Graphing Quadratics Step-by-Step', content:'<ol><li>Write in standard form: y = ax² + bx + c</li><li>Find vertex: x = -b/(2a), then plug in for y</li><li>Find y-intercept: set x = 0</li><li>Make a table of 3-5 points around vertex</li><li>Plot points and draw a smooth U-shaped curve</li><li>Check: opens UP if a > 0, DOWN if a < 0</li></ol>' },
+      { title:'Vertex Form Cheat Sheet', content:'<p><strong>y = a(x - h)² + k</strong></p><p>Vertex = (h, k) — that\'s your highest or lowest point!</p><p>If a is positive → smiley face parabola 😊</p><p>If a is negative → frowny face parabola 😞</p><p>The bigger |a| is, the skinnier the parabola</p>' },
+      { title:'Common Mistakes to Avoid', content:'<ol><li>Forgetting the negative in x = -b/(2a)</li><li>Not squaring correctly in the table of values</li><li>Mixing up (h,k) signs — y = (x-3)² means h=3, NOT h=-3</li><li>Drawing a V shape instead of a smooth curve</li></ol>' }
+    ]
+  },
+  { id:'science', name:'Advanced Science', icon:'🔬', color:'#0d9488', gradient:'linear-gradient(135deg,#14b8a6,#5eead4)', cardClass:'card-science', url:'https://southlakecarroll.instructure.com/courses', topic:'Physics - Force & Motion',
+    help: [
+      { title:'Balancing Chemical Equations', content:'<ol><li>Write the unbalanced equation</li><li>Count atoms on each side</li><li>Add coefficients (big numbers in front) to balance</li><li>Check your work — both sides should match!</li><li>Never change subscripts, only coefficients</li></ol>' },
+      { title:'Types of Chemical Reactions', content:'<p><strong>Synthesis:</strong> A + B → AB (two things combine)</p><p><strong>Decomposition:</strong> AB → A + B (one thing breaks apart)</p><p><strong>Single Replacement:</strong> A + BC → AC + B</p><p><strong>Double Replacement:</strong> AB + CD → AD + CB</p><p><strong>Combustion:</strong> fuel + O₂ → CO₂ + H₂O</p>' },
+      { title:'Study Tip', content:'<p>Draw out the reactions with colored pencils! Color-code each element so you can track where atoms go. Your visual brain will love this!</p>' }
+    ]
+  },
+  { id:'history', name:'US History', icon:'📜', color:'#ea580c', gradient:'linear-gradient(135deg,#f97316,#fbbf24)', cardClass:'card-history', url:'https://southlakecarroll.instructure.com/courses', topic:'Civil War & Reconstruction',
+    help: [
+      { title:'The 6 C\'s of Primary Source Analysis', content:'<ol><li><strong>Content:</strong> What does the source say?</li><li><strong>Citation:</strong> Who created it? When?</li><li><strong>Context:</strong> What was happening at this time?</li><li><strong>Connections:</strong> How does it relate to other things you know?</li><li><strong>Communication:</strong> Who was the audience?</li><li><strong>Conclusions:</strong> What can you learn from this source?</li></ol>' },
+      { title:'Writing a Strong Analysis', content:'<p>Use this formula: <strong>CLAIM + EVIDENCE + REASONING</strong></p><p>Example: "This source shows [claim] because the author states [quote from source]. This matters because [connect to bigger picture]."</p>' },
+      { title:'Quick Memory Trick', content:'<p>Think of the 6 C\'s as a detective checklist 🔎 — you\'re investigating a mystery from the past! Who wrote it, why, and what can it tell us?</p>' }
+    ]
+  },
+  { id:'language', name:'Language Arts', icon:'📖', color:'#db2777',gradient:'linear-gradient(135deg,#ec4899,#f9a8d4)', cardClass:'card-language', url:'https://southlakecarroll.instructure.com/courses', topic:'FFA Reading & Literature Analysis',
+    help: [
+      { title:'Active Reading Strategies', content:'<ol><li><strong>Preview:</strong> Skim headings, bold words, and images first</li><li><strong>Question:</strong> Turn headings into questions</li><li><strong>Read:</strong> Look for answers to your questions</li><li><strong>Summarize:</strong> After each section, say the main idea in your own words</li><li><strong>Review:</strong> Look back at your notes</li></ol>' },
+      { title:'Literary Analysis Terms', content:'<p><strong>Theme:</strong> The big life lesson or message</p><p><strong>Tone:</strong> The author\'s attitude (serious, playful, sarcastic)</p><p><strong>Symbolism:</strong> When something represents something bigger</p><p><strong>Foreshadowing:</strong> Hints about what\'s coming</p><p><strong>Irony:</strong> When the opposite of what you expect happens</p>' },
+      { title:'Reading with ADHD', content:'<p>Try the "chunk and check" method: read one paragraph, then pause and ask "what just happened?" If you can\'t answer, re-read it. Use a bookmark or finger to keep your place!</p>' }
+    ]
+  },
+  { id:'art', name:'3D Art', icon:'🎨', color:'#2563eb', gradient:'linear-gradient(135deg,#3b82f6,#93c5fd)', cardClass:'card-art', url:'https://southlakecarroll.instructure.com/courses', topic:'3D Art Projects',
+    help: [
+      { title:'Hexagonal Thinking', content:'<p>Each hexagon represents one idea, theme, or connection. Arrange them so touching hexagons show relationships between concepts. There\'s no one right answer — it\'s about YOUR connections!</p>' },
+      { title:'Tips for 3D Projects', content:'<ol><li>Plan your design on paper first (sketch multiple ideas)</li><li>Think about structure — what holds it up?</li><li>Consider texture, color, and how light hits surfaces</li><li>Take photos of your process for documentation</li><li>Don\'t rush the drying/setting time!</li></ol>' },
+      { title:'Creative Block? Try This!', content:'<p>Look at 3 random objects near you. How could you combine elements from each into your project? Sometimes the weirdest combinations make the coolest art!</p>' }
+    ]
+  }
+];
 
 const assignments = [
       { id:1, title:'HIPP Analysis', classId:'history', due:'2026-02-08', time:'All Day', done:true },
