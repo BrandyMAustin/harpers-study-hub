@@ -237,11 +237,11 @@
 <div class="bg-animation"></div>
 
 <div class="header">
-  <h1>Harper's Study Hub <span>✨</span></h1>
+  <h1>Harper's Study Hub <span>â¨</span></h1>
   <div class="header-nav">
-    <button class="nav-btn active" onclick="showView('dashboard')">🏠 Home</button>
-    <button class="nav-btn" onclick="showView('calendar')">📅 Calendar</button>
-    <button class="nav-btn" onclick="showView('timer')">⏱️ Focus Timer</button>
+    <button class="nav-btn active" onclick="showView('dashboard')">ð  Home</button>
+    <button class="nav-btn" onclick="showView('calendar')">ð Calendar</button>
+    <button class="nav-btn" onclick="showView('timer')">â±ï¸ Focus Timer</button>
   </div>
 </div>
 
@@ -256,21 +256,21 @@
   </div>
 
   <div id="view-class" class="view">
-    <button class="back-btn" onclick="showView('dashboard')">← Back to Classes</button>
+    <button class="back-btn" onclick="showView('dashboard')">â Back to Classes</button>
     <div id="class-detail-content"></div>
   </div>
 
   <div id="view-calendar" class="view">
     <div class="section-panel">
       <div class="cal-nav">
-        <button onclick="changeMonth(-1)">‹</button>
+        <button onclick="changeMonth(-1)">â¹</button>
         <h3 id="cal-month-label"></h3>
-        <button onclick="changeMonth(1)">›</button>
+        <button onclick="changeMonth(1)">âº</button>
       </div>
       <div class="calendar-grid" id="cal-grid"></div>
     </div>
     <div class="section-panel" style="margin-top:20px">
-      <h3>📋 All Upcoming Assignments</h3>
+      <h3>ð All Upcoming Assignments</h3>
       <ul class="assignment-list" id="all-assignments-list"></ul>
     </div>
   </div>
@@ -278,7 +278,7 @@
   <div id="view-timer" class="view">
     <div class="section-panel">
       <div class="pomodoro">
-        <h3 style="font-size:22px; margin-bottom:8px;">🍅 Focus Timer</h3>
+        <h3 style="font-size:22px; margin-bottom:8px;">ð Focus Timer</h3>
         <p style="color:var(--text-light); margin-bottom:16px;">Stay focused with the Pomodoro technique! Work for 25 min, then take a break.</p>
         <div class="timer-mode-btns">
           <button class="mode-btn active" onclick="setTimerMode(25,'Focus Time')">25 min Focus</button>
@@ -288,17 +288,17 @@
         <div class="timer-display" id="timer-display">25:00</div>
         <p id="timer-label" style="font-weight:700; color:var(--purple); margin-bottom:12px;">Focus Time</p>
         <div class="timer-btns">
-          <button class="timer-btn primary" id="timer-start-btn" onclick="toggleTimer()">▶ Start</button>
-          <button class="timer-btn secondary" onclick="resetTimer()">↺ Reset</button>
+          <button class="timer-btn primary" id="timer-start-btn" onclick="toggleTimer()">â¶ Start</button>
+          <button class="timer-btn secondary" onclick="resetTimer()">âº Reset</button>
         </div>
       </div>
     </div>
 
     <div class="section-panel">
-      <h3>💡 ADHD Focus Tips</h3>
+      <h3>ð¡ ADHD Focus Tips</h3>
       <div class="help-card">
         <h4>Body Doubling</h4>
-        <p>Study with a friend (even on video call) — just having someone nearby helps your brain stay on track!</p>
+        <p>Study with a friend (even on video call) â just having someone nearby helps your brain stay on track!</p>
       </div>
       <div class="help-card">
         <h4>Task Chunking</h4>
@@ -310,45 +310,45 @@
       </div>
       <div class="help-card">
         <h4>Reward Yourself</h4>
-        <p>After each Pomodoro session, give yourself a small reward — a snack, a quick game, or 5 min of your favorite show!</p>
+        <p>After each Pomodoro session, give yourself a small reward â a snack, a quick game, or 5 min of your favorite show!</p>
       </div>
     </div>
   </div>
 </div>
 <script>
 const classes = [
-  { id:'algebra', name:'Advanced Algebra 1', icon:'📐', color:'#7c3aed', gradient:'linear-gradient(135deg,#7c3aed,#a78bfa)', cardClass:'card-algebra', url:'https://southlakecarroll.instructure.com/courses/49770', topic:'Quadratics - Completing the Square & Applications',
+  { id:'algebra', name:'Advanced Algebra 1', icon:'ð', color:'#7c3aed', gradient:'linear-gradient(135deg,#7c3aed,#a78bfa)', cardClass:'card-algebra', url:'https://southlakecarroll.instructure.com/courses/49770', topic:'Quadratics - Completing the Square & Applications',
     help: [
-      { title:'Graphing Quadratics Step-by-Step', content:'<ol><li>Write in standard form: y = ax² + bx + c</li><li>Find vertex: x = -b/(2a), then plug in for y</li><li>Find y-intercept: set x = 0</li><li>Make a table of 3-5 points around vertex</li><li>Plot points and draw a smooth U-shaped curve</li><li>Check: opens UP if a > 0, DOWN if a < 0</li></ol>' },
-      { title:'Vertex Form Cheat Sheet', content:'<p><strong>y = a(x - h)² + k</strong></p><p>Vertex = (h, k) — that\'s your highest or lowest point!</p><p>If a is positive → smiley face parabola 😊</p><p>If a is negative → frowny face parabola 😞</p><p>The bigger |a| is, the skinnier the parabola</p>' },
-      { title:'Common Mistakes to Avoid', content:'<ol><li>Forgetting the negative in x = -b/(2a)</li><li>Not squaring correctly in the table of values</li><li>Mixing up (h,k) signs — y = (x-3)² means h=3, NOT h=-3</li><li>Drawing a V shape instead of a smooth curve</li></ol>' }
+      { title:'Graphing Quadratics Step-by-Step', content:'<ol><li>Write in standard form: y = axÂ² + bx + c</li><li>Find vertex: x = -b/(2a), then plug in for y</li><li>Find y-intercept: set x = 0</li><li>Make a table of 3-5 points around vertex</li><li>Plot points and draw a smooth U-shaped curve</li><li>Check: opens UP if a > 0, DOWN if a < 0</li></ol>' },
+      { title:'Vertex Form Cheat Sheet', content:'<p><strong>y = a(x - h)Â² + k</strong></p><p>Vertex = (h, k) â that\'s your highest or lowest point!</p><p>If a is positive â smiley face parabola ð</p><p>If a is negative â frowny face parabola ð</p><p>The bigger |a| is, the skinnier the parabola</p>' },
+      { title:'Common Mistakes to Avoid', content:'<ol><li>Forgetting the negative in x = -b/(2a)</li><li>Not squaring correctly in the table of values</li><li>Mixing up (h,k) signs â y = (x-3)Â² means h=3, NOT h=-3</li><li>Drawing a V shape instead of a smooth curve</li></ol>' }
     ]
   },
-  { id:'science', name:'Advanced Science', icon:'🔬', color:'#0d9488', gradient:'linear-gradient(135deg,#14b8a6,#5eead4)', cardClass:'card-science', url:'https://southlakecarroll.instructure.com/courses', topic:'Physics - Force & Motion',
+  { id:'science', name:'Advanced Science', icon:'ð¬', color:'#0d9488', gradient:'linear-gradient(135deg,#14b8a6,#5eead4)', cardClass:'card-science', url:'https://southlakecarroll.instructure.com/courses', topic:'Physics - Force & Motion',
     help: [
-      { title:'Balancing Chemical Equations', content:'<ol><li>Write the unbalanced equation</li><li>Count atoms on each side</li><li>Add coefficients (big numbers in front) to balance</li><li>Check your work — both sides should match!</li><li>Never change subscripts, only coefficients</li></ol>' },
-      { title:'Types of Chemical Reactions', content:'<p><strong>Synthesis:</strong> A + B → AB (two things combine)</p><p><strong>Decomposition:</strong> AB → A + B (one thing breaks apart)</p><p><strong>Single Replacement:</strong> A + BC → AC + B</p><p><strong>Double Replacement:</strong> AB + CD → AD + CB</p><p><strong>Combustion:</strong> fuel + O₂ → CO₂ + H₂O</p>' },
+      { title:'Balancing Chemical Equations', content:'<ol><li>Write the unbalanced equation</li><li>Count atoms on each side</li><li>Add coefficients (big numbers in front) to balance</li><li>Check your work â both sides should match!</li><li>Never change subscripts, only coefficients</li></ol>' },
+      { title:'Types of Chemical Reactions', content:'<p><strong>Synthesis:</strong> A + B â AB (two things combine)</p><p><strong>Decomposition:</strong> AB â A + B (one thing breaks apart)</p><p><strong>Single Replacement:</strong> A + BC â AC + B</p><p><strong>Double Replacement:</strong> AB + CD â AD + CB</p><p><strong>Combustion:</strong> fuel + Oâ â COâ + HâO</p>' },
       { title:'Study Tip', content:'<p>Draw out the reactions with colored pencils! Color-code each element so you can track where atoms go. Your visual brain will love this!</p>' }
     ]
   },
-  { id:'history', name:'US History', icon:'📜', color:'#ea580c', gradient:'linear-gradient(135deg,#f97316,#fbbf24)', cardClass:'card-history', url:'https://southlakecarroll.instructure.com/courses', topic:'Civil War & Reconstruction',
+  { id:'history', name:'US History', icon:'ð', color:'#ea580c', gradient:'linear-gradient(135deg,#f97316,#fbbf24)', cardClass:'card-history', url:'https://southlakecarroll.instructure.com/courses', topic:'Civil War & Reconstruction',
     help: [
       { title:'The 6 C\'s of Primary Source Analysis', content:'<ol><li><strong>Content:</strong> What does the source say?</li><li><strong>Citation:</strong> Who created it? When?</li><li><strong>Context:</strong> What was happening at this time?</li><li><strong>Connections:</strong> How does it relate to other things you know?</li><li><strong>Communication:</strong> Who was the audience?</li><li><strong>Conclusions:</strong> What can you learn from this source?</li></ol>' },
       { title:'Writing a Strong Analysis', content:'<p>Use this formula: <strong>CLAIM + EVIDENCE + REASONING</strong></p><p>Example: "This source shows [claim] because the author states [quote from source]. This matters because [connect to bigger picture]."</p>' },
-      { title:'Quick Memory Trick', content:'<p>Think of the 6 C\'s as a detective checklist 🔎 — you\'re investigating a mystery from the past! Who wrote it, why, and what can it tell us?</p>' }
+      { title:'Quick Memory Trick', content:'<p>Think of the 6 C\'s as a detective checklist ð â you\'re investigating a mystery from the past! Who wrote it, why, and what can it tell us?</p>' }
     ]
   },
-  { id:'language', name:'Language Arts', icon:'📖', color:'#db2777',gradient:'linear-gradient(135deg,#ec4899,#f9a8d4)', cardClass:'card-language', url:'https://southlakecarroll.instructure.com/courses', topic:'FFA Reading & Literature Analysis',
+  { id:'language', name:'Language Arts', icon:'ð', color:'#db2777',gradient:'linear-gradient(135deg,#ec4899,#f9a8d4)', cardClass:'card-language', url:'https://southlakecarroll.instructure.com/courses', topic:'FFA Reading & Literature Analysis',
     help: [
       { title:'Active Reading Strategies', content:'<ol><li><strong>Preview:</strong> Skim headings, bold words, and images first</li><li><strong>Question:</strong> Turn headings into questions</li><li><strong>Read:</strong> Look for answers to your questions</li><li><strong>Summarize:</strong> After each section, say the main idea in your own words</li><li><strong>Review:</strong> Look back at your notes</li></ol>' },
       { title:'Literary Analysis Terms', content:'<p><strong>Theme:</strong> The big life lesson or message</p><p><strong>Tone:</strong> The author\'s attitude (serious, playful, sarcastic)</p><p><strong>Symbolism:</strong> When something represents something bigger</p><p><strong>Foreshadowing:</strong> Hints about what\'s coming</p><p><strong>Irony:</strong> When the opposite of what you expect happens</p>' },
       { title:'Reading with ADHD', content:'<p>Try the "chunk and check" method: read one paragraph, then pause and ask "what just happened?" If you can\'t answer, re-read it. Use a bookmark or finger to keep your place!</p>' }
     ]
   },
-  { id:'art', name:'3D Art', icon:'🎨', color:'#2563eb', gradient:'linear-gradient(135deg,#3b82f6,#93c5fd)', cardClass:'card-art', url:'https://southlakecarroll.instructure.com/courses', topic:'3D Art Projects',
+  { id:'art', name:'3D Art', icon:'ð¨', color:'#2563eb', gradient:'linear-gradient(135deg,#3b82f6,#93c5fd)', cardClass:'card-art', url:'https://southlakecarroll.instructure.com/courses', topic:'3D Art Projects',
     help: [
-      { title:'Hexagonal Thinking', content:'<p>Each hexagon represents one idea, theme, or connection. Arrange them so touching hexagons show relationships between concepts. There\'s no one right answer — it\'s about YOUR connections!</p>' },
-      { title:'Tips for 3D Projects', content:'<ol><li>Plan your design on paper first (sketch multiple ideas)</li><li>Think about structure — what holds it up?</li><li>Consider texture, color, and how light hits surfaces</li><li>Take photos of your process for documentation</li><li>Don\'t rush the drying/setting time!</li></ol>' },
+      { title:'Hexagonal Thinking', content:'<p>Each hexagon represents one idea, theme, or connection. Arrange them so touching hexagons show relationships between concepts. There\'s no one right answer â it\'s about YOUR connections!</p>' },
+      { title:'Tips for 3D Projects', content:'<ol><li>Plan your design on paper first (sketch multiple ideas)</li><li>Think about structure â what holds it up?</li><li>Consider texture, color, and how light hits surfaces</li><li>Take photos of your process for documentation</li><li>Don\'t rush the drying/setting time!</li></ol>' },
       { title:'Creative Block? Try This!', content:'<p>Look at 3 random objects near you. How could you combine elements from each into your project? Sometimes the weirdest combinations make the coolest art!</p>' }
     ]
   }
@@ -422,79 +422,81 @@ const assignments = [
       { id:66, title:'Unit 11 Test Part One', classId:'algebra', due:'2026-04-10', time:'In Class', done:false },
       { id:67, title:'Unit 11 Test Part Two', classId:'algebra', due:'2026-04-13', time:'In Class', done:false },
       { id:68, title:'Algebra Quiz', classId:'algebra', due:'2026-04-20', time:'In Class', done:false },
-            { id:69, title:'Unit 11 Quiz Review', classId:'algebra', due:'2026-04-07', time:'8:30 AM', done:false }
+            { id:69, title:'Unit 11 Quiz Review', classId:'algebra', due:'2026-04-07', time:'8:30 AM', done:false },
+      { id:70, title:'Unit 12 Test Part One', classId:'algebra', due:'2026-05-11', time:'In Class', done:false },
+      { id:71, title:'Unit 12 Test Part Two', classId:'algebra', due:'2026-05-12', time:'In Class', done:false }
     ];
 
 const gradeData = {
       algebra: {
         grade: 62, letter: 'D',
-        trend: 'PR5: 63 → PR6: 67 → T3: 62',
+        trend: 'PR5: 63 â PR6: 67 â T3: 62',
         trendDir: 'down',
-        summary: '⚠️ Algebra needs urgent attention. Two missing assignments and low test scores are the main issues.',
+        summary: 'â ï¸ Algebra needs urgent attention. Two missing assignments and low test scores are the main issues.',
         actions: [
-          { priority: 'urgent', text: 'Turn in Unit 9 Test Review (currently 0/100) — even partial credit helps!' },
-          { priority: 'urgent', text: 'Complete Unit 9 Quiz Rev COMP (currently 0/100) — two zeros are pulling the average way down.' },
-          { priority: 'important', text: 'Unit 9 Test was 44/100 and Quiz was 53/100 — ask Mr. Robbins about test corrections or retakes.' },
-          { priority: 'important', text: 'Focus on graphing quadratics: vertex form y = a(x-h)²+k, finding the vertex, and plotting points.' },
+          { priority: 'urgent', text: 'Turn in Unit 9 Test Review (currently 0/100) â even partial credit helps!' },
+          { priority: 'urgent', text: 'Complete Unit 9 Quiz Rev COMP (currently 0/100) â two zeros are pulling the average way down.' },
+          { priority: 'important', text: 'Unit 9 Test was 44/100 and Quiz was 53/100 â ask Mr. Robbins about test corrections or retakes.' },
+          { priority: 'important', text: 'Focus on graphing quadratics: vertex form y = a(x-h)Â²+k, finding the vertex, and plotting points.' },
           { priority: 'tip', text: 'If you score 80 on both missing assignments, your T3 could jump to ~75. Those zeros matter A LOT!' }
         ]
       },
       language: {
         grade: null, letter: null,
-        trend: 'PR5: 83 → PR6: 79',
+        trend: 'PR5: 83 â PR6: 79',
         trendDir: 'down',
         summary: 'One missing assignment is hurting this grade. Turning it in could make a big difference.',
         actions: [
-          { priority: 'urgent', text: 'Turn in DJ- Act 1 (missing since 02/27, currently 0/100) — this zero is dragging the average down.' },
-          { priority: 'important', text: 'Grades slipped from 83 to 79 last period — stay on top of daily assignments and reading.' },
+          { priority: 'urgent', text: 'Turn in DJ- Act 1 (missing since 02/27, currently 0/100) â this zero is dragging the average down.' },
+          { priority: 'important', text: 'Grades slipped from 83 to 79 last period â stay on top of daily assignments and reading.' },
           { priority: 'tip', text: 'Talk to Ms. Clayton about the DJ-Act 1 makeup. Even late credit beats a zero!' }
         ]
       },
       art: {
         grade: null, letter: null,
-        trend: 'PR5: 100 → PR6: 100',
+        trend: 'PR5: 100 â PR6: 100',
         trendDir: 'stable',
         summary: 'All Art grades are 100 except one missing project. Easy fix!',
         actions: [
-          { priority: 'urgent', text: 'Turn in Clay Crest Design (missing since 02/25) — every other Art grade is 100, so this one zero is the ONLY thing hurting you.' },
+          { priority: 'urgent', text: 'Turn in Clay Crest Design (missing since 02/25) â every other Art grade is 100, so this one zero is the ONLY thing hurting you.' },
           { priority: 'tip', text: 'Talk to Ms. Peterson about completing the Clay Crest Design. One assignment = perfect grade!' }
         ]
       },
       history: {
         grade: null, letter: null,
-        trend: 'PR5: 95 → PR6: 84',
+        trend: 'PR5: 95 â PR6: 84',
         trendDir: 'down',
         summary: 'No missing work, but the grade dipped from last period. Keep up with study guides.',
         actions: [
-          { priority: 'important', text: 'Grade dropped from 95 to 84 — make sure all study guides and reading checks are fully complete.' },
-          { priority: 'important', text: 'Unit 13 Test is coming up — start reviewing now and use the 6 C\'s method for primary sources!' },
+          { priority: 'important', text: 'Grade dropped from 95 to 84 â make sure all study guides and reading checks are fully complete.' },
+          { priority: 'important', text: 'Unit 13 Test is coming up â start reviewing now and use the 6 C\'s method for primary sources!' },
           { priority: 'tip', text: 'Your strength is primary source analysis. Practice with real examples to prep for the test.' }
         ]
       },
       science: {
         grade: null, letter: null,
-        trend: 'PR5: 84 → PR6: 85',
+        trend: 'PR5: 84 â PR6: 85',
         trendDir: 'up',
         summary: 'Grades are steadily improving! Keep up the momentum heading into the next test.',
         actions: [
-          { priority: 'important', text: 'Chemistry Test 2 is coming up — review balancing equations, reaction types, and the periodic table.' },
-          { priority: 'tip', text: 'Your grades have improved every period (76 → 80 → 84 → 85). Awesome trend — keep it going!' },
-          { priority: 'tip', text: 'Draw reactions with colored pencils — color-code each element to track where atoms go.' }
+          { priority: 'important', text: 'Chemistry Test 2 is coming up â review balancing equations, reaction types, and the periodic table.' },
+          { priority: 'tip', text: 'Your grades have improved every period (76 â 80 â 84 â 85). Awesome trend â keep it going!' },
+          { priority: 'tip', text: 'Draw reactions with colored pencils â color-code each element to track where atoms go.' }
         ]
       }
     };
 
     const quotes = [
-  "You don't have to be perfect — you just have to keep going! 💪",
-  "Your brain works differently, and that's your superpower! ✨",
-  "Small steps every day add up to big results! 🌟",
-  "It's okay to take breaks — they make you stronger! 🧠",
-  "You've got this, Harper! One assignment at a time! 🚀",
-  "Mistakes are just your brain learning something new! 🌈",
-  "Focus on progress, not perfection! 💜",
-  "The hardest part is starting — and you already did that! 🎉",
-  "Your future self will thank you for studying today! 🌸",
-  "Be proud of every small win! They all count! ⭐"
+  "You don't have to be perfect â you just have to keep going! ðª",
+  "Your brain works differently, and that's your superpower! â¨",
+  "Small steps every day add up to big results! ð",
+  "It's okay to take breaks â they make you stronger! ð§ ",
+  "You've got this, Harper! One assignment at a time! ð",
+  "Mistakes are just your brain learning something new! ð",
+  "Focus on progress, not perfection! ð",
+  "The hardest part is starting â and you already did that! ð",
+  "Your future self will thank you for studying today! ð¸",
+  "Be proud of every small win! They all count! â­"
 ];
 
 let currentView = 'dashboard';
@@ -566,7 +568,7 @@ function renderGradePanel(classId) {
         gradeLabel = 'Current T3 Grade' + (letter ? ' (' + letter + ')' : '');
       }
       const trendClass = gd.trendDir === 'up' ? 'trend-up' : gd.trendDir === 'down' ? 'trend-down' : 'trend-stable';
-      const trendIcon = gd.trendDir === 'up' ? '📈' : gd.trendDir === 'down' ? '📉' : '➡️';
+      const trendIcon = gd.trendDir === 'up' ? 'ð' : gd.trendDir === 'down' ? 'ð' : 'â¡ï¸';
       let actionsHTML = '';
       gd.actions.forEach(function(a) {
         actionsHTML += '<div class="action-item"><span class="priority priority-' + a.priority + '">' + a.priority + '</span> ' + a.text + '</div>';
@@ -582,7 +584,7 @@ function renderGradePanel(classId) {
         '</div>' +
         '<p style="color:var(--text-light);font-size:14px;margin-bottom:12px;">' + gd.summary + '</p>' +
         '<div class="improvement-plan' + (isCritical ? ' critical' : '') + '">' +
-          '<h4>' + (isCritical ? '🚨 Action Plan to Raise This Grade' : '📋 Action Plan') + '</h4>' +
+          '<h4>' + (isCritical ? 'ð¨ Action Plan to Raise This Grade' : 'ð Action Plan') + '</h4>' +
           actionsHTML +
         '</div>' +
       '</div>';
@@ -591,12 +593,12 @@ function renderGradePanel(classId) {
     function renderDashboard() {
   const hour = new Date().getHours();
   let greet = hour < 12 ? 'Good Morning' : hour < 17 ? 'Good Afternoon' : 'Good Evening';
-  document.getElementById('greeting').textContent = greet + ', Harper! 👋';
+  document.getElementById('greeting').textContent = greet + ', Harper! ð';
   const dueToday = assignments.filter(a => !a.done && a.due === '2026-03-06').length;
   const total = assignments.filter(a => !a.done).length;
   document.getElementById('greeting-sub').textContent = dueToday > 0
     ? 'You have ' + dueToday + ' thing' + (dueToday>1?'s':'') + ' due today and ' + total + ' total upcoming assignments'
-    : 'You have ' + total + ' upcoming assignments — you\'ve got this!';
+    : 'You have ' + total + ' upcoming assignments â you\'ve got this!';
   document.getElementById('quote-banner').textContent = quotes[Math.floor(Math.random() * quotes.length)];
   const grid = document.getElementById('class-grid');
   grid.innerHTML = '';
@@ -611,7 +613,7 @@ function renderGradePanel(classId) {
       const urgency = getUrgency(nextAssignment.due);
       assignPreview = '<div class="assignment-preview"><span class="label">Next Up</span><div style="display:flex; align-items:center; justify-content:space-between;"><span>' + nextAssignment.title + '</span><span class="badge badge-' + urgency + '">' + formatDueShort(nextAssignment.due) + '</span></div></div>';
     } else {
-      assignPreview = '<div class="assignment-preview"><span class="label" style="color:var(--green)">All caught up! 🎉</span></div>';
+      assignPreview = '<div class="assignment-preview"><span class="label" style="color:var(--green)">All caught up! ð</span></div>';
     }
     card.innerHTML = '<span class="icon">' + cls.icon + '</span><h3>' + cls.name + '</h3><p class="topic">' + cls.topic + '</p>' + assignPreview;
     grid.appendChild(card);
@@ -626,12 +628,12 @@ function renderClassDetail(classId) {
   let assignHTML = '';
   classAssignments.sort((a,b) => a.due.localeCompare(b.due)).forEach(a => {
     const urgency = getUrgency(a.due);
-    assignHTML += '<li class="' + (a.done ? 'done' : '') + '" style="border-left: 3px solid ' + cls.color + ';"><div style="display:flex; align-items:center; flex:1;"><button class="check-btn ' + (a.done ? 'checked' : '') + '" onclick="toggleAssignment(' + a.id + ', \'' + classId + '\')">' + (a.done ? '✓' : '') + '</button><div><div class="name">' + a.title + '</div><div class="due-date">' + formatDueFull(a.due) + ' at ' + a.time + '</div></div></div><span class="badge badge-' + urgency + '">' + (urgency === 'today' ? 'TODAY' : urgency === 'week' ? 'This Week' : formatDueShort(a.due)) + '</span></li>';
+    assignHTML += '<li class="' + (a.done ? 'done' : '') + '" style="border-left: 3px solid ' + cls.color + ';"><div style="display:flex; align-items:center; flex:1;"><button class="check-btn ' + (a.done ? 'checked' : '') + '" onclick="toggleAssignment(' + a.id + ', \'' + classId + '\')">' + (a.done ? 'â' : '') + '</button><div><div class="name">' + a.title + '</div><div class="due-date">' + formatDueFull(a.due) + ' at ' + a.time + '</div></div></div><span class="badge badge-' + urgency + '">' + (urgency === 'today' ? 'TODAY' : urgency === 'week' ? 'This Week' : formatDueShort(a.due)) + '</span></li>';
   });
   let helpHTML = '';
   if (cls.help) { cls.help.forEach(h => { helpHTML += '<div class="help-card"><h4>' + h.title + '</h4>' + h.content + '</div>'; }); }
   const savedNotes = notes[classId] || '';
-  container.innerHTML = '<div class="detail-header"><span class="icon">' + cls.icon + '</span><div><h2 style="color:' + cls.color + '">' + cls.name + '</h2><span class="topic-badge">' + cls.topic + '</span></div></div><a href="' + cls.url + '" target="_blank" class="canvas-link" style="background:' + cls.gradient + '">🔗 Open in Canvas</a>' + renderGradePanel(cls.id) + '<div class="section-panel"><h3>📋 Assignments</h3><ul class="assignment-list">' + (assignHTML || '<li style="color:var(--text-light); padding:12px;">No assignments right now!</li>') + '</ul></div><div class="section-panel"><h3>💡 Help & Study Tips</h3>' + helpHTML + '</div><div class="section-panel"><h3>📝 My Notes & Ideas</h3><p style="color:var(--text-light); font-size:14px; margin-bottom:12px;">Jot down formulas, teacher tips, questions — anything you want to remember!</p><textarea class="notes-area" id="notes-' + classId + '" placeholder="Type your notes here..." oninput="saveNotes(\'' + classId + '\')">' + savedNotes + '</textarea><div class="save-indicator" id="save-indicator-' + classId + '">✓ Saved!</div></div>';
+  container.innerHTML = '<div class="detail-header"><span class="icon">' + cls.icon + '</span><div><h2 style="color:' + cls.color + '">' + cls.name + '</h2><span class="topic-badge">' + cls.topic + '</span></div></div><a href="' + cls.url + '" target="_blank" class="canvas-link" style="background:' + cls.gradient + '">ð Open in Canvas</a>' + renderGradePanel(cls.id) + '<div class="section-panel"><h3>ð Assignments</h3><ul class="assignment-list">' + (assignHTML || '<li style="color:var(--text-light); padding:12px;">No assignments right now!</li>') + '</ul></div><div class="section-panel"><h3>ð¡ Help & Study Tips</h3>' + helpHTML + '</div><div class="section-panel"><h3>ð My Notes & Ideas</h3><p style="color:var(--text-light); font-size:14px; margin-bottom:12px;">Jot down formulas, teacher tips, questions â anything you want to remember!</p><textarea class="notes-area" id="notes-' + classId + '" placeholder="Type your notes here..." oninput="saveNotes(\'' + classId + '\')">' + savedNotes + '</textarea><div class="save-indicator" id="save-indicator-' + classId + '">â Saved!</div></div>';
 }
 
 function toggleAssignment(id, classId) {
@@ -684,7 +686,7 @@ function renderAllAssignments() {
   sorted.forEach(a => {
     const cls = classes.find(c => c.id === a.classId);
     const urgency = getUrgency(a.due);
-    list.innerHTML += '<li class="' + (a.done ? 'done' : '') + '" style="border-left: 3px solid ' + cls.color + ';"><div style="display:flex; align-items:center; flex:1;"><button class="check-btn ' + (a.done ? 'checked' : '') + '" onclick="toggleAssignment(' + a.id + ')">' + (a.done ? '✓' : '') + '</button><div><div class="name">' + a.title + '</div><div class="due-date">' + cls.icon + ' ' + cls.name + ' — ' + formatDueFull(a.due) + ' at ' + a.time + '</div></div></div><span class="badge badge-' + urgency + '">' + formatDueShort(a.due) + '</span></li>';
+    list.innerHTML += '<li class="' + (a.done ? 'done' : '') + '" style="border-left: 3px solid ' + cls.color + ';"><div style="display:flex; align-items:center; flex:1;"><button class="check-btn ' + (a.done ? 'checked' : '') + '" onclick="toggleAssignment(' + a.id + ')">' + (a.done ? 'â' : '') + '</button><div><div class="name">' + a.title + '</div><div class="due-date">' + cls.icon + ' ' + cls.name + ' â ' + formatDueFull(a.due) + ' at ' + a.time + '</div></div></div><span class="badge badge-' + urgency + '">' + formatDueShort(a.due) + '</span></li>';
   });
 }
 
@@ -695,7 +697,7 @@ function setTimerMode(minutes, label) {
   clearInterval(timerInterval);
   updateTimerDisplay();
   document.getElementById('timer-label').textContent = label;
-  document.getElementById('timer-start-btn').textContent = '▶ Start';
+  document.getElementById('timer-start-btn').textContent = 'â¶ Start';
   document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
   event.target.classList.add('active');
 }
@@ -704,17 +706,17 @@ function toggleTimer() {
   if (timerRunning) {
     timerRunning = false;
     clearInterval(timerInterval);
-    document.getElementById('timer-start-btn').textContent = '▶ Resume';
+    document.getElementById('timer-start-btn').textContent = 'â¶ Resume';
   } else {
     timerRunning = true;
-    document.getElementById('timer-start-btn').textContent = '⏸ Pause';
+    document.getElementById('timer-start-btn').textContent = 'â¸ Pause';
     timerInterval = setInterval(() => {
       timerSeconds--;
       if (timerSeconds <= 0) {
         clearInterval(timerInterval);
         timerRunning = false;
-        document.getElementById('timer-start-btn').textContent = '▶ Start';
-        alert(timerMode === 'Focus Time' ? '🎉 Great work! Time for a break!' : '⏰ Break is over! Ready to focus again?');
+        document.getElementById('timer-start-btn').textContent = 'â¶ Start';
+        alert(timerMode === 'Focus Time' ? 'ð Great work! Time for a break!' : 'â° Break is over! Ready to focus again?');
         timerSeconds = 0;
       }
       updateTimerDisplay();
@@ -728,7 +730,7 @@ function resetTimer() {
   const activeMode = document.querySelector('.mode-btn.active');
   if (activeMode) { timerSeconds = parseInt(activeMode.textContent) * 60; } else { timerSeconds = 25 * 60; }
   updateTimerDisplay();
-  document.getElementById('timer-start-btn').textContent = '▶ Start';
+  document.getElementById('timer-start-btn').textContent = 'â¶ Start';
 }
 
 function updateTimerDisplay() {
